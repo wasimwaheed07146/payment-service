@@ -10,18 +10,8 @@ And clone by using following command
 
 ## How to run an application ##
 
-## Using docker ##
-Go to the directory of Dockerfile i.e in "payment-service" folder in repository
 
-Build docker image using following command
-
-- docker build -t starzplay-payment-service .
-
-Run the docker image using following command
-- docker run -p 8080:8080 starzplay-payment-service
-
-
-## Without Docker as a standalone springboot app ##
+## As a standalone springboot app ##
 
 Go to payment-service folder and run the following commands
 
@@ -33,6 +23,15 @@ Now run the jar using following command
 - java -jar payment-service.jar
 
 
+## Using docker ##
+Go to the directory of Dockerfile i.e in "payment-service" folder in repository
+
+Build docker image using following command
+
+- docker build -t starzplay-payment-service .
+
+Run the docker image using following command
+- docker run -p 8080:8080 starzplay-payment-service
 
 ## Swagger URL ##
 
@@ -47,7 +46,9 @@ You can view all the API's used in application on following url
 
 - jdbc url : jdbc:h2:mem:starzplay
 - username : root
-- password : root
+- password : root,
+
+Note : H2Console is unable to access from inside docker container. Unable to fix due to time shortage
 
 
 ## SQL Script ##
