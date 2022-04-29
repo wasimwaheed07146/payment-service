@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+	  https://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+
+    <changeSet author="Wasim Waheed" id="1">
+        <createTable tableName="payment_method">
+            <column autoIncrement="true" name="id" type="TINYINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="payment_method_pk"/>
+            </column>
+
+            <column name="name" type="VARCHAR(45)">
+                <constraints nullable="false" unique="true" uniqueConstraintName="name_unique"/>
+            </column>
+
+            <column name="display_name" type="VARCHAR(45)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="payment_type" type="TINYINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createIndex indexName="name_idx" tableName="payment_method">
+            <column name="name"/>
+        </createIndex>
+
+        <createTable tableName="payment_plan">
+            <column autoIncrement="true" name="id" type="TINYINT">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="payment_plan_pk"/>
+            </column>
+
+            <column name="net_amount" type="DECIMAL(7, 2)"/>
+            <column name="tax_amount" type="DECIMAL(7, 2)"/>
+            <column name="gross_amount" type="DECIMAL(7, 2)"/>
+            <column name="currency" type="TINYINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="duration" type="TINYINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="payment_method_id" type="TINYINT">
+                <constraints nullable="false" foreignKeyName="paymentMethod_paymentPlan_fk" references="payment_method(id)"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

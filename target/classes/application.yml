@@ -1,0 +1,38 @@
+springdoc:
+  swagger-ui:
+    display-request-duration: true
+    operationsSorter: method
+    disable-swagger-default-url: true
+  show-actuator: true
+  packagesToScan: com.payment
+
+spring:
+  application:
+    name: STARZPLAY_PAYMENT
+  datasource:
+    username: ${DB_USER:root}
+    password: ${DB_PASSWORD:root}
+    url: ${DB_URL:jdbc:h2:mem:starzplay}
+    driverClassName: org.h2.Driver
+  h2:
+    console.enabled: true
+    settings:
+      web-allow-others: true
+  jpa:
+    spring.jpa.database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+  liquibase:
+    enabled: true
+    change-log: classpath:db.changelog-master.xml
+
+management:
+  endpoint:
+    health:
+      show-details: "ALWAYS"
+
+starzplay:
+  swagger:
+    title: Starzplay payment service
+    description: This service is to handle payment requests for Starzplay.
