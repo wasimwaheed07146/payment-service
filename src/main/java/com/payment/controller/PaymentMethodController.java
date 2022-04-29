@@ -87,7 +87,7 @@ public class PaymentMethodController {
             @ApiResponse(responseCode = "401", description = "Unauthorized")
     })
     @PutMapping
-    public PaymentResponseDto updatePaymentMethod(@RequestParam(value = "payment-methods",required = false) Integer paymentMethodId, @Valid @RequestBody PaymentMethodDto request) {
+    public PaymentResponseDto updatePaymentMethod(@RequestParam("payment-methods") Integer paymentMethodId, @Valid @RequestBody PaymentMethodDto request) {
         log.debug("REST request to update payment method with paymentMethodId: {} and request : {}", paymentMethodId,request);
         return service.updatePaymentMethod(paymentMethodId, request);
     }
