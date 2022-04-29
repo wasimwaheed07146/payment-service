@@ -21,7 +21,7 @@ Run the docker image using following command
 - docker run -p 8080:8080 starzplay-payment-service
 
 
-## Without Docker as a standalone springboot app##
+## Without Docker as a standalone springboot app ##
 
 Go to payment-service folder and run the following commands
 
@@ -34,14 +34,14 @@ Now run the jar using following command
 
 
 
-## Swagger URL##
+## Swagger URL ##
 
 You can view all the API's used in application on following url
 
 - http://localhost:8080/swagger-ui.html
 
 
-## H2 Database Console URL##
+## H2 Database Console URL ##
 
 - http://localhost:8080/h2-console
 
@@ -50,7 +50,7 @@ You can view all the API's used in application on following url
 - password : root
 
 
-## SQL Script##
+## SQL Script ##
 
 - I have used liquibase to create database schema
 - Scripts are present in "db.changelog-master.xml" file present in payment-service/src/main/resources directory
