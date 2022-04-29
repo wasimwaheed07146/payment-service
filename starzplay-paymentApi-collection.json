@@ -43,7 +43,29 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": ""
+					"raw": "http://localhost:8082/api/v1.0/configuration/payment-methods?id=3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"v1.0",
+						"configuration",
+						"payment-methods"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "3"
+						},
+						{
+							"key": "name",
+							"value": "Voucher",
+							"disabled": true
+						}
+					]
 				}
 			},
 			"response": []
