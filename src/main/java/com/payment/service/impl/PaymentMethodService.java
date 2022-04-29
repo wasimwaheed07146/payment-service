@@ -8,7 +8,6 @@ import com.payment.exception.ApplicationErrorType;
 import com.payment.exception.PaymentException;
 import com.payment.mappers.PaymentMethodMapper;
 import com.payment.repository.PaymentMethodRepository;
-import com.payment.repository.PaymentPlanRepository;
 import com.payment.service.IPaymentMethodService;
 import com.payment.specs.PaymentMethodSpecification;
 import lombok.extern.slf4j.Slf4j;
@@ -29,13 +28,11 @@ import java.util.List;
 @Slf4j
 public class PaymentMethodService implements IPaymentMethodService {
     private final PaymentMethodRepository paymentMethodRepository;
-    private final PaymentPlanRepository paymentPlanRepository;
     private final PaymentMethodMapper paymentMethodMapper;
 
     @Autowired
-    public PaymentMethodService(PaymentMethodRepository paymentMethodRepository, PaymentPlanRepository paymentPlanRepository, PaymentMethodMapper paymentMethodMapper){
+    public PaymentMethodService(PaymentMethodRepository paymentMethodRepository, PaymentMethodMapper paymentMethodMapper){
         this.paymentMethodRepository = paymentMethodRepository;
-        this.paymentPlanRepository = paymentPlanRepository;
         this.paymentMethodMapper = paymentMethodMapper;
     }
     /**

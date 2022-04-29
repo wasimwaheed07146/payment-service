@@ -11,7 +11,6 @@ import com.payment.exception.ApplicationErrorType;
 import com.payment.exception.PaymentException;
 import com.payment.mappers.PaymentMethodMapper;
 import com.payment.repository.PaymentMethodRepository;
-import com.payment.repository.PaymentPlanRepository;
 import com.payment.service.impl.PaymentMethodService;
 import com.payment.specs.PaymentMethodSpecification;
 import org.junit.jupiter.api.Assertions;
@@ -40,8 +39,6 @@ public class PaymentServiceTest {
 
     @Mock
     private PaymentMethodRepository paymentMethodRepository;
-    @Mock
-    private PaymentPlanRepository paymentPlanRepository;
     @Mock
     private PaymentMethodMapper paymentMethodMapper;
     @InjectMocks
