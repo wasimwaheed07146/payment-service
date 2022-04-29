@@ -56,6 +56,13 @@ Note : H2Console is unable to access from inside docker container. Unable to fix
 - I have used liquibase to create database schema
 - Scripts are present in "db.changelog-master.xml" file present in payment-service/src/main/resources directory
 
+## Input Payload ##
+
+Added an exported postman collection for reference of input and output payload
+
+- /payment-service/starzplay-paymentApi-collection.json
+
+Import the above file in postman for better readability
 
 ## Language, Frameworks, Libraries ##
 
